@@ -69,6 +69,7 @@
   --color-info: var(--info);
   --color-warning: var(--warning);
   --font-sans: "Lexend", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Lexend", sans-serif;
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);

@@ -34,3 +34,4 @@ use the editor.
 - All images live in src/assets/; demo content lives in src/lib/data.ts and user state (name, follows, likes, saves) in src/lib/store.ts via localStorage, since there is no backend yet.
 - Custom rounded icons live in src/components/app/icons.tsx; generic UI icons come from lucide-react.
 - C7 member screens share building blocks in src/components/c7/ (kit.tsx, moods.tsx) and sample data in src/lib/c7-data.ts; keep them presentational so layouts port to React Native.
+- First-login onboarding lives under src/routes/first-login/* with shared pieces in src/components/onboard/ and answers in src/lib/onboarding.ts (in-memory); standalone SVG artwork in src/assets/*.svg uses inline fills only so it can be copied.

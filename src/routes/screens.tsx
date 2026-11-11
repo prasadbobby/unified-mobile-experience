@@ -15,6 +15,7 @@ export const Route = createFileRoute("/screens")({
 });
 
 const items = [
+  { to: "/first-login/welcome", title: "First-time sign-in", sub: "Invited member onboarding (9 steps)" },
   { to: "/membership", title: "Membership", sub: "Plan, payments, history" },
   { to: "/challenge-checkin", title: "Today's check-in", sub: "90-day challenge form" },
   { to: "/challenge-feed", title: "Challenge feed", sub: "Community check-ins" },

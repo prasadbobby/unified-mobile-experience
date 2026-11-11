@@ -28,6 +28,15 @@ import { Route as StepsRouteImport } from './routes/steps'
 import { Route as WorkoutRouteImport } from './routes/workout'
 import { Route as WorkoutLoggerRouteImport } from './routes/workout-logger'
 import { Route as ExerciseIdRouteImport } from './routes/exercise.$id'
+import { Route as FirstLoginAgeRouteImport } from './routes/first-login/age'
+import { Route as FirstLoginCodeRouteImport } from './routes/first-login/code'
+import { Route as FirstLoginGoalRouteImport } from './routes/first-login/goal'
+import { Route as FirstLoginHeightRouteImport } from './routes/first-login/height'
+import { Route as FirstLoginLevelRouteImport } from './routes/first-login/level'
+import { Route as FirstLoginNameRouteImport } from './routes/first-login/name'
+import { Route as FirstLoginReadyRouteImport } from './routes/first-login/ready'
+import { Route as FirstLoginWeightRouteImport } from './routes/first-login/weight'
+import { Route as FirstLoginWelcomeRouteImport } from './routes/first-login/welcome'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -124,6 +133,51 @@ const ExerciseIdRoute = ExerciseIdRouteImport.update({
   path: '/exercise/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FirstLoginAgeRoute = FirstLoginAgeRouteImport.update({
+  id: '/first-login/age',
+  path: '/first-login/age',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstLoginCodeRoute = FirstLoginCodeRouteImport.update({
+  id: '/first-login/code',
+  path: '/first-login/code',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstLoginGoalRoute = FirstLoginGoalRouteImport.update({
+  id: '/first-login/goal',
+  path: '/first-login/goal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstLoginHeightRoute = FirstLoginHeightRouteImport.update({
+  id: '/first-login/height',
+  path: '/first-login/height',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstLoginLevelRoute = FirstLoginLevelRouteImport.update({
+  id: '/first-login/level',
+  path: '/first-login/level',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstLoginNameRoute = FirstLoginNameRouteImport.update({
+  id: '/first-login/name',
+  path: '/first-login/name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstLoginReadyRoute = FirstLoginReadyRouteImport.update({
+  id: '/first-login/ready',
+  path: '/first-login/ready',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstLoginWeightRoute = FirstLoginWeightRouteImport.update({
+  id: '/first-login/weight',
+  path: '/first-login/weight',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstLoginWelcomeRoute = FirstLoginWelcomeRouteImport.update({
+  id: '/first-login/welcome',
+  path: '/first-login/welcome',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -145,6 +199,15 @@ export interface FileRoutesByFullPath {
   '/workout': typeof WorkoutRoute
   '/workout-logger': typeof WorkoutLoggerRoute
   '/exercise/$id': typeof ExerciseIdRoute
+  '/first-login/age': typeof FirstLoginAgeRoute
+  '/first-login/code': typeof FirstLoginCodeRoute
+  '/first-login/goal': typeof FirstLoginGoalRoute
+  '/first-login/height': typeof FirstLoginHeightRoute
+  '/first-login/level': typeof FirstLoginLevelRoute
+  '/first-login/name': typeof FirstLoginNameRoute
+  '/first-login/ready': typeof FirstLoginReadyRoute
+  '/first-login/weight': typeof FirstLoginWeightRoute
+  '/first-login/welcome': typeof FirstLoginWelcomeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -166,6 +229,15 @@ export interface FileRoutesByTo {
   '/workout': typeof WorkoutRoute
   '/workout-logger': typeof WorkoutLoggerRoute
   '/exercise/$id': typeof ExerciseIdRoute
+  '/first-login/age': typeof FirstLoginAgeRoute
+  '/first-login/code': typeof FirstLoginCodeRoute
+  '/first-login/goal': typeof FirstLoginGoalRoute
+  '/first-login/height': typeof FirstLoginHeightRoute
+  '/first-login/level': typeof FirstLoginLevelRoute
+  '/first-login/name': typeof FirstLoginNameRoute
+  '/first-login/ready': typeof FirstLoginReadyRoute
+  '/first-login/weight': typeof FirstLoginWeightRoute
+  '/first-login/welcome': typeof FirstLoginWelcomeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -188,6 +260,15 @@ export interface FileRoutesById {
   '/workout': typeof WorkoutRoute
   '/workout-logger': typeof WorkoutLoggerRoute
   '/exercise/$id': typeof ExerciseIdRoute
+  '/first-login/age': typeof FirstLoginAgeRoute
+  '/first-login/code': typeof FirstLoginCodeRoute
+  '/first-login/goal': typeof FirstLoginGoalRoute
+  '/first-login/height': typeof FirstLoginHeightRoute
+  '/first-login/level': typeof FirstLoginLevelRoute
+  '/first-login/name': typeof FirstLoginNameRoute
+  '/first-login/ready': typeof FirstLoginReadyRoute
+  '/first-login/weight': typeof FirstLoginWeightRoute
+  '/first-login/welcome': typeof FirstLoginWelcomeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -211,6 +292,15 @@ export interface FileRouteTypes {
     | '/workout'
     | '/workout-logger'
     | '/exercise/$id'
+    | '/first-login/age'
+    | '/first-login/code'
+    | '/first-login/goal'
+    | '/first-login/height'
+    | '/first-login/level'
+    | '/first-login/name'
+    | '/first-login/ready'
+    | '/first-login/weight'
+    | '/first-login/welcome'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -232,6 +322,15 @@ export interface FileRouteTypes {
     | '/workout'
     | '/workout-logger'
     | '/exercise/$id'
+    | '/first-login/age'
+    | '/first-login/code'
+    | '/first-login/goal'
+    | '/first-login/height'
+    | '/first-login/level'
+    | '/first-login/name'
+    | '/first-login/ready'
+    | '/first-login/weight'
+    | '/first-login/welcome'
   id:
     | '__root__'
     | '/'
@@ -253,6 +352,15 @@ export interface FileRouteTypes {
     | '/workout'
     | '/workout-logger'
     | '/exercise/$id'
+    | '/first-login/age'
+    | '/first-login/code'
+    | '/first-login/goal'
+    | '/first-login/height'
+    | '/first-login/level'
+    | '/first-login/name'
+    | '/first-login/ready'
+    | '/first-login/weight'
+    | '/first-login/welcome'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -275,6 +383,15 @@ export interface RootRouteChildren {
   WorkoutRoute: typeof WorkoutRoute
   WorkoutLoggerRoute: typeof WorkoutLoggerRoute
   ExerciseIdRoute: typeof ExerciseIdRoute
+  FirstLoginAgeRoute: typeof FirstLoginAgeRoute
+  FirstLoginCodeRoute: typeof FirstLoginCodeRoute
+  FirstLoginGoalRoute: typeof FirstLoginGoalRoute
+  FirstLoginHeightRoute: typeof FirstLoginHeightRoute
+  FirstLoginLevelRoute: typeof FirstLoginLevelRoute
+  FirstLoginNameRoute: typeof FirstLoginNameRoute
+  FirstLoginReadyRoute: typeof FirstLoginReadyRoute
+  FirstLoginWeightRoute: typeof FirstLoginWeightRoute
+  FirstLoginWelcomeRoute: typeof FirstLoginWelcomeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -412,6 +529,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExerciseIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/first-login/age': {
+      id: '/first-login/age'
+      path: '/first-login/age'
+      fullPath: '/first-login/age'
+      preLoaderRoute: typeof FirstLoginAgeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-login/code': {
+      id: '/first-login/code'
+      path: '/first-login/code'
+      fullPath: '/first-login/code'
+      preLoaderRoute: typeof FirstLoginCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-login/goal': {
+      id: '/first-login/goal'
+      path: '/first-login/goal'
+      fullPath: '/first-login/goal'
+      preLoaderRoute: typeof FirstLoginGoalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-login/height': {
+      id: '/first-login/height'
+      path: '/first-login/height'
+      fullPath: '/first-login/height'
+      preLoaderRoute: typeof FirstLoginHeightRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-login/level': {
+      id: '/first-login/level'
+      path: '/first-login/level'
+      fullPath: '/first-login/level'
+      preLoaderRoute: typeof FirstLoginLevelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-login/name': {
+      id: '/first-login/name'
+      path: '/first-login/name'
+      fullPath: '/first-login/name'
+      preLoaderRoute: typeof FirstLoginNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-login/ready': {
+      id: '/first-login/ready'
+      path: '/first-login/ready'
+      fullPath: '/first-login/ready'
+      preLoaderRoute: typeof FirstLoginReadyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-login/weight': {
+      id: '/first-login/weight'
+      path: '/first-login/weight'
+      fullPath: '/first-login/weight'
+      preLoaderRoute: typeof FirstLoginWeightRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-login/welcome': {
+      id: '/first-login/welcome'
+      path: '/first-login/welcome'
+      fullPath: '/first-login/welcome'
+      preLoaderRoute: typeof FirstLoginWelcomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -435,6 +615,15 @@ const rootRouteChildren: RootRouteChildren = {
   WorkoutRoute: WorkoutRoute,
   WorkoutLoggerRoute: WorkoutLoggerRoute,
   ExerciseIdRoute: ExerciseIdRoute,
+  FirstLoginAgeRoute: FirstLoginAgeRoute,
+  FirstLoginCodeRoute: FirstLoginCodeRoute,
+  FirstLoginGoalRoute: FirstLoginGoalRoute,
+  FirstLoginHeightRoute: FirstLoginHeightRoute,
+  FirstLoginLevelRoute: FirstLoginLevelRoute,
+  FirstLoginNameRoute: FirstLoginNameRoute,
+  FirstLoginReadyRoute: FirstLoginReadyRoute,
+  FirstLoginWeightRoute: FirstLoginWeightRoute,
+  FirstLoginWelcomeRoute: FirstLoginWelcomeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
