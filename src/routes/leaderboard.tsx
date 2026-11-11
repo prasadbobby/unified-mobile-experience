@@ -21,7 +21,7 @@ function Leaderboard() {
   const [tab, setTab] = useState<"workout" | "cooking">("workout");
   const [asc, setAsc] = useState(false);
   const data = leaderboard[tab];
-  const [first, second, third] = data;
+  const first = data[0]!, second = data[1]!, third = data[2]!;
   const rows = asc ? [...data].reverse() : data;
   const unit = tab === "workout" ? "/steps" : "/pts";
   const Podium = ({ u, rank, size, h }: { u: (typeof data)[number]; rank: number; size: string; h: string }) => (

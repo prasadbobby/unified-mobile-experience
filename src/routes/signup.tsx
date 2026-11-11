@@ -29,7 +29,7 @@ function Signup() {
     if (f.pw.length < 6) return setErr("Password must be at least 6 characters");
     if (f.pw !== f.pw2) return setErr("Passwords don't match");
     if (!agree) return setErr("Please accept the Terms & Condition");
-    setState({ name: f.name.trim().split(" ")[0], email: f.email });
+    setState({ name: f.name.trim().split(" ")[0] ?? f.name, email: f.email });
     navigate({ to: "/home" });
   };
   const social = () => navigate({ to: "/home" });

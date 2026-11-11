@@ -17,9 +17,9 @@ export const Route = createFileRoute("/meals")({
 });
 
 const posts = [
-  { author: "Regina Fly", followers: "12k", avatar: avatars.regina, meal: meals[0] },
-  { author: "Alex Freedman", followers: "8.4k", avatar: avatars.alex, meal: meals[2] },
-  { author: "Methew Apostol", followers: "5.1k", avatar: avatars.methew, meal: meals[5] },
+  { author: "Regina Fly", followers: "12k", avatar: avatars.regina, meal: meals[0]! },
+  { author: "Alex Freedman", followers: "8.4k", avatar: avatars.alex, meal: meals[2]! },
+  { author: "Methew Apostol", followers: "5.1k", avatar: avatars.methew, meal: meals[5]! },
 ];
 
 function Meals() {
