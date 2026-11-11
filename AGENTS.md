@@ -33,3 +33,4 @@ use the editor.
 - App is a mobile-first (max 430px) fitness app; shared shell/nav lives in src/components/app/ui.tsx so every screen looks the same.
 - All images live in src/assets/; demo content lives in src/lib/data.ts and user state (name, follows, likes, saves) in src/lib/store.ts via localStorage, since there is no backend yet.
 - Custom rounded icons live in src/components/app/icons.tsx; generic UI icons come from lucide-react.
+- C7 member screens share building blocks in src/components/c7/ (kit.tsx, moods.tsx) and sample data in src/lib/c7-data.ts; keep them presentational so layouts port to React Native.

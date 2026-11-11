@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Check, ChevronLeft, ChevronRight, Plus, SkipForward, Trophy, Undo2, History } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BackButton, Screen } from "@/components/app/ui";
+import { DumbbellGlyph } from "@/components/app/icons";
 import { FRAME, Ring, Stepper } from "@/components/c7/kit";
 import { loggerPlan } from "@/lib/c7-data";
 import { cn } from "@/lib/utils";
@@ -88,7 +89,7 @@ function Logger() {
             <button onClick={() => setSets((s) => s.map((x, k) => k === ex ? [...x, { ...x[x.length - 1]!, done: false }] : x))} className="mt-3 flex h-12 w-full items-center justify-center gap-2 rounded-full border border-dashed border-primary/60 text-sm text-primary"><Plus className="h-4 w-4" />Add set</button>
             {next && (
               <div className="mt-5 flex items-center gap-3 rounded-[1.5rem] bg-card p-3">
-                <img src={next.image} alt="" className="h-14 w-14 rounded-xl object-cover" />
+                <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-deep text-primary"><DumbbellGlyph className="h-7 w-7" /></span>
                 <div className="flex-1"><p className="text-xs text-muted-foreground">Next up</p><p className="font-medium">{next.name}</p><p className="text-xs text-muted-foreground">{next.sets} × {next.target}</p></div>
               </div>
             )}
