@@ -1,6 +1,6 @@
 import { Link, useRouter, useRouterState } from "@tanstack/react-router";
-import { ArrowLeft, BarChart3, ChevronLeft, Dumbbell, EllipsisVertical, Home, UserRound, UtensilsCrossed } from "lucide-react";
-import type { ReactNode } from "react";
+import { ArrowLeft, BarChart3, BellRing, Flame, ChevronLeft, Dumbbell, EllipsisVertical, Home, UserRound, UtensilsCrossed } from "lucide-react";
+import { useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 export function Screen({ children, className, nav = false }: { children: ReactNode; className?: string; nav?: boolean }) {
@@ -101,5 +101,42 @@ export function PrimaryButton({ children, className, ...p }: React.ButtonHTMLAtt
     <button {...p} className={cn("h-14 w-full rounded-full bg-primary font-medium text-primary-foreground shadow-glow transition hover:brightness-110 active:scale-[.98] disabled:opacity-50", className)}>
       {children}
     </button>
+  );
+}
+
+export function Greeting({ name, avatar }: { name: string; avatar: string }) {
+  return (
+    <header className="flex items-center gap-3 px-5 pt-8">
+      <Link to="/profile"><img src={avatar} alt={name} className="h-14 w-14 rounded-full object-cover ring-2 ring-primary/40" /></Link>
+      <div className="flex-1">
+        <p className="text-lg">Hello {name} 👋</p>
+        <p className="text-sm text-muted-foreground">Get ready</p>
+      </div>
+      <NotifyButton />
+      <Link to="/leaderboard" aria-label="Streak" className="flex h-12 w-12 items-center justify-center rounded-full bg-surface/80 transition hover:bg-secondary">
+        <Flame className="h-5 w-5" />
+      </Link>
+    </header>
+  );
+}
+
+function NotifyButton() {
+  const [open, setOpen] = useState(false);
+  const [seen, setSeen] = useState(false);
+  return (
+    <div className="relative">
+      <IconButton label="Notifications" onClick={() => { setOpen(!open); setSeen(true); }}>
+        <BellRing className="h-5 w-5" />
+        {!seen && <span className="absolute right-2.5 top-2.5 h-2 w-2 animate-pulse rounded-full bg-destructive" />}
+      </IconButton>
+      {open && (
+        <div className="absolute right-0 top-14 z-30 w-64 rounded-2xl border border-border bg-popover p-4 text-sm shadow-card animate-pop">
+          <p className="font-medium">🔥 3 day streak!</p>
+          <p className="mt-1 text-muted-foreground">You still need 819 steps to complete your day.</p>
+          <p className="mt-3 font-medium">🏆 New challenge</p>
+          <p className="mt-1 text-muted-foreground">2 Weeks of Energy is waiting for you.</p>
+        </div>
+      )}
+    </div>
   );
 }
