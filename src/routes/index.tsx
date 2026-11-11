@@ -18,15 +18,15 @@ export const Route = createFileRoute("/")({
 
 const slides = [
   { img: hero, score: 88, big: "+1,012", label: "Steps Taken", note: "You still need 819 steps to complete your day. Do it now!!! ⚡" },
-  { img: workouts[0].image, score: 92, big: "47.5kg", label: "Lifted Today", note: "Guided workouts with video and progress you can see. 💪" },
-  { img: workouts[1].image, score: 76, big: "1120", label: "Kcal Tracked", note: "Daily nutrition and a cooking community that keeps you fuelled. 🥗" },
-  { img: workouts[2].image, score: 95, big: "#32", label: "Your Rank", note: "Climb the leaderboard with friends every single week. 🏆" },
+  { img: workouts[0]!.image, score: 92, big: "47.5kg", label: "Lifted Today", note: "Guided workouts with video and progress you can see. 💪" },
+  { img: workouts[1]!.image, score: 76, big: "1120", label: "Kcal Tracked", note: "Daily nutrition and a cooking community that keeps you fuelled. 🥗" },
+  { img: workouts[2]!.image, score: 95, big: "#32", label: "Your Rank", note: "Climb the leaderboard with friends every single week. 🏆" },
 ];
 
 function Onboarding() {
   const [i, setI] = useState(0);
   const navigate = useNavigate();
-  const s = slides[i];
+  const s = slides[i]!;
   const next = () => (i < slides.length - 1 ? setI(i + 1) : navigate({ to: "/login" }));
   return (
     <Screen className="h-screen overflow-hidden">
