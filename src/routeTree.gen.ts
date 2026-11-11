@@ -10,14 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChallengeCalendarRouteImport } from './routes/challenge-calendar'
+import { Route as ChallengeCheckinRouteImport } from './routes/challenge-checkin'
+import { Route as ChallengeFeedRouteImport } from './routes/challenge-feed'
 import { Route as HomeRouteImport } from './routes/home'
+import { Route as InviteRouteImport } from './routes/invite'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
+import { Route as LockedRouteImport } from './routes/locked'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as MealsRouteImport } from './routes/meals'
+import { Route as MembershipRouteImport } from './routes/membership'
 import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ScreensRouteImport } from './routes/screens'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as StepsRouteImport } from './routes/steps'
 import { Route as WorkoutRouteImport } from './routes/workout'
+import { Route as WorkoutLoggerRouteImport } from './routes/workout-logger'
 import { Route as ExerciseIdRouteImport } from './routes/exercise.$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -25,14 +34,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChallengeCalendarRoute = ChallengeCalendarRouteImport.update({
+  id: '/challenge-calendar',
+  path: '/challenge-calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChallengeCheckinRoute = ChallengeCheckinRouteImport.update({
+  id: '/challenge-checkin',
+  path: '/challenge-checkin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChallengeFeedRoute = ChallengeFeedRouteImport.update({
+  id: '/challenge-feed',
+  path: '/challenge-feed',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HomeRoute = HomeRouteImport.update({
   id: '/home',
   path: '/home',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InviteRoute = InviteRouteImport.update({
+  id: '/invite',
+  path: '/invite',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LeaderboardRoute = LeaderboardRouteImport.update({
   id: '/leaderboard',
   path: '/leaderboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LockedRoute = LockedRouteImport.update({
+  id: '/locked',
+  path: '/locked',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -45,9 +79,19 @@ const MealsRoute = MealsRouteImport.update({
   path: '/meals',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MembershipRoute = MembershipRouteImport.update({
+  id: '/membership',
+  path: '/membership',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScreensRoute = ScreensRouteImport.update({
+  id: '/screens',
+  path: '/screens',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SearchRoute = SearchRouteImport.update({
@@ -60,9 +104,19 @@ const SignupRoute = SignupRouteImport.update({
   path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StepsRoute = StepsRouteImport.update({
+  id: '/steps',
+  path: '/steps',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkoutRoute = WorkoutRouteImport.update({
   id: '/workout',
   path: '/workout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkoutLoggerRoute = WorkoutLoggerRouteImport.update({
+  id: '/workout-logger',
+  path: '/workout-logger',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExerciseIdRoute = ExerciseIdRouteImport.update({
@@ -73,90 +127,153 @@ const ExerciseIdRoute = ExerciseIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/challenge-calendar': typeof ChallengeCalendarRoute
+  '/challenge-checkin': typeof ChallengeCheckinRoute
+  '/challenge-feed': typeof ChallengeFeedRoute
   '/home': typeof HomeRoute
+  '/invite': typeof InviteRoute
   '/leaderboard': typeof LeaderboardRoute
+  '/locked': typeof LockedRoute
   '/login': typeof LoginRoute
   '/meals': typeof MealsRoute
+  '/membership': typeof MembershipRoute
   '/profile': typeof ProfileRoute
+  '/screens': typeof ScreensRoute
   '/search': typeof SearchRoute
   '/signup': typeof SignupRoute
+  '/steps': typeof StepsRoute
   '/workout': typeof WorkoutRoute
+  '/workout-logger': typeof WorkoutLoggerRoute
   '/exercise/$id': typeof ExerciseIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/challenge-calendar': typeof ChallengeCalendarRoute
+  '/challenge-checkin': typeof ChallengeCheckinRoute
+  '/challenge-feed': typeof ChallengeFeedRoute
   '/home': typeof HomeRoute
+  '/invite': typeof InviteRoute
   '/leaderboard': typeof LeaderboardRoute
+  '/locked': typeof LockedRoute
   '/login': typeof LoginRoute
   '/meals': typeof MealsRoute
+  '/membership': typeof MembershipRoute
   '/profile': typeof ProfileRoute
+  '/screens': typeof ScreensRoute
   '/search': typeof SearchRoute
   '/signup': typeof SignupRoute
+  '/steps': typeof StepsRoute
   '/workout': typeof WorkoutRoute
+  '/workout-logger': typeof WorkoutLoggerRoute
   '/exercise/$id': typeof ExerciseIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/challenge-calendar': typeof ChallengeCalendarRoute
+  '/challenge-checkin': typeof ChallengeCheckinRoute
+  '/challenge-feed': typeof ChallengeFeedRoute
   '/home': typeof HomeRoute
+  '/invite': typeof InviteRoute
   '/leaderboard': typeof LeaderboardRoute
+  '/locked': typeof LockedRoute
   '/login': typeof LoginRoute
   '/meals': typeof MealsRoute
+  '/membership': typeof MembershipRoute
   '/profile': typeof ProfileRoute
+  '/screens': typeof ScreensRoute
   '/search': typeof SearchRoute
   '/signup': typeof SignupRoute
+  '/steps': typeof StepsRoute
   '/workout': typeof WorkoutRoute
+  '/workout-logger': typeof WorkoutLoggerRoute
   '/exercise/$id': typeof ExerciseIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/challenge-calendar'
+    | '/challenge-checkin'
+    | '/challenge-feed'
     | '/home'
+    | '/invite'
     | '/leaderboard'
+    | '/locked'
     | '/login'
     | '/meals'
+    | '/membership'
     | '/profile'
+    | '/screens'
     | '/search'
     | '/signup'
+    | '/steps'
     | '/workout'
+    | '/workout-logger'
     | '/exercise/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/challenge-calendar'
+    | '/challenge-checkin'
+    | '/challenge-feed'
     | '/home'
+    | '/invite'
     | '/leaderboard'
+    | '/locked'
     | '/login'
     | '/meals'
+    | '/membership'
     | '/profile'
+    | '/screens'
     | '/search'
     | '/signup'
+    | '/steps'
     | '/workout'
+    | '/workout-logger'
     | '/exercise/$id'
   id:
     | '__root__'
     | '/'
+    | '/challenge-calendar'
+    | '/challenge-checkin'
+    | '/challenge-feed'
     | '/home'
+    | '/invite'
     | '/leaderboard'
+    | '/locked'
     | '/login'
     | '/meals'
+    | '/membership'
     | '/profile'
+    | '/screens'
     | '/search'
     | '/signup'
+    | '/steps'
     | '/workout'
+    | '/workout-logger'
     | '/exercise/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChallengeCalendarRoute: typeof ChallengeCalendarRoute
+  ChallengeCheckinRoute: typeof ChallengeCheckinRoute
+  ChallengeFeedRoute: typeof ChallengeFeedRoute
   HomeRoute: typeof HomeRoute
+  InviteRoute: typeof InviteRoute
   LeaderboardRoute: typeof LeaderboardRoute
+  LockedRoute: typeof LockedRoute
   LoginRoute: typeof LoginRoute
   MealsRoute: typeof MealsRoute
+  MembershipRoute: typeof MembershipRoute
   ProfileRoute: typeof ProfileRoute
+  ScreensRoute: typeof ScreensRoute
   SearchRoute: typeof SearchRoute
   SignupRoute: typeof SignupRoute
+  StepsRoute: typeof StepsRoute
   WorkoutRoute: typeof WorkoutRoute
+  WorkoutLoggerRoute: typeof WorkoutLoggerRoute
   ExerciseIdRoute: typeof ExerciseIdRoute
 }
 
@@ -169,6 +286,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/challenge-calendar': {
+      id: '/challenge-calendar'
+      path: '/challenge-calendar'
+      fullPath: '/challenge-calendar'
+      preLoaderRoute: typeof ChallengeCalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/challenge-checkin': {
+      id: '/challenge-checkin'
+      path: '/challenge-checkin'
+      fullPath: '/challenge-checkin'
+      preLoaderRoute: typeof ChallengeCheckinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/challenge-feed': {
+      id: '/challenge-feed'
+      path: '/challenge-feed'
+      fullPath: '/challenge-feed'
+      preLoaderRoute: typeof ChallengeFeedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/home': {
       id: '/home'
       path: '/home'
@@ -176,11 +314,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HomeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/invite': {
+      id: '/invite'
+      path: '/invite'
+      fullPath: '/invite'
+      preLoaderRoute: typeof InviteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/leaderboard': {
       id: '/leaderboard'
       path: '/leaderboard'
       fullPath: '/leaderboard'
       preLoaderRoute: typeof LeaderboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locked': {
+      id: '/locked'
+      path: '/locked'
+      fullPath: '/locked'
+      preLoaderRoute: typeof LockedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -197,11 +349,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MealsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/membership': {
+      id: '/membership'
+      path: '/membership'
+      fullPath: '/membership'
+      preLoaderRoute: typeof MembershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/screens': {
+      id: '/screens'
+      path: '/screens'
+      fullPath: '/screens'
+      preLoaderRoute: typeof ScreensRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/search': {
@@ -218,11 +384,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/steps': {
+      id: '/steps'
+      path: '/steps'
+      fullPath: '/steps'
+      preLoaderRoute: typeof StepsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/workout': {
       id: '/workout'
       path: '/workout'
       fullPath: '/workout'
       preLoaderRoute: typeof WorkoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/workout-logger': {
+      id: '/workout-logger'
+      path: '/workout-logger'
+      fullPath: '/workout-logger'
+      preLoaderRoute: typeof WorkoutLoggerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/exercise/$id': {
@@ -237,14 +417,23 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChallengeCalendarRoute: ChallengeCalendarRoute,
+  ChallengeCheckinRoute: ChallengeCheckinRoute,
+  ChallengeFeedRoute: ChallengeFeedRoute,
   HomeRoute: HomeRoute,
+  InviteRoute: InviteRoute,
   LeaderboardRoute: LeaderboardRoute,
+  LockedRoute: LockedRoute,
   LoginRoute: LoginRoute,
   MealsRoute: MealsRoute,
+  MembershipRoute: MembershipRoute,
   ProfileRoute: ProfileRoute,
+  ScreensRoute: ScreensRoute,
   SearchRoute: SearchRoute,
   SignupRoute: SignupRoute,
+  StepsRoute: StepsRoute,
   WorkoutRoute: WorkoutRoute,
+  WorkoutLoggerRoute: WorkoutLoggerRoute,
   ExerciseIdRoute: ExerciseIdRoute,
 }
 export const routeTree = rootRouteImport

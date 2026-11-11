@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Dumbbell, EllipsisVertical, Footprints, ListFilter, LogOut, Zap } from "lucide-react";
 import { useState } from "react";
 import hero from "@/assets/profile-emma.jpg";
@@ -57,6 +57,7 @@ function Profile() {
             <div className="text-right"><p className="text-3xl font-light">{a.v}</p><p className="text-xs text-muted-foreground">{a.u}</p></div>
           </div>
         ))}
+        <Link to="/screens" className="flex h-14 items-center justify-center rounded-full border-2 border-primary text-primary">New screens</Link>
       </div>
     </Screen>
   );
