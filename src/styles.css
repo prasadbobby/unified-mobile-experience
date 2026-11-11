@@ -153,3 +153,10 @@
 @utility animate-rise { transform-origin: bottom; animation: rise .7s cubic-bezier(.2,.8,.2,1) both; }
 @utility animate-draw { stroke-dasharray: 600; animation: draw 1.6s ease-out both; }
 @utility animate-twinkle { animation: twinkle 1.8s ease-in-out infinite; }
+
+@utility field {
+  height: 3.5rem; width: 100%; border-radius: 9999px; background: var(--card); padding: 0 1.5rem;
+  color: var(--foreground); outline: none; transition: box-shadow .2s;
+  &::placeholder { color: var(--muted-foreground); }
+  &:focus { box-shadow: 0 0 0 1.5px var(--primary); }
+}
