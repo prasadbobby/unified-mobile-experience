@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/profile")({
   head: () => ({ meta: [
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     { title: "Profile — PulseFit" },
     { name: "description", content: "Your followers, body stats and latest activity." },
     { property: "og:title", content: "Profile — PulseFit" },

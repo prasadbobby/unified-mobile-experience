@@ -8,6 +8,7 @@ import { setState } from "@/lib/store";
 
 export const Route = createFileRoute("/login")({
   head: () => ({ meta: [
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     { title: "Log in — PulseFit" },
     { name: "description", content: "Log in to PulseFit to pick up your habits, streaks and progress." },
     { property: "og:title", content: "Log in — PulseFit" },

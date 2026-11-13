@@ -68,6 +68,9 @@
   --color-cream: var(--cream);
   --color-info: var(--info);
   --color-warning: var(--warning);
+  --color-receipt: var(--receipt);
+  --color-receipt-ink: var(--receipt-ink);
+  --color-receipt-muted: var(--receipt-muted);
   --font-sans: "Lexend", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Barlow Condensed", "Lexend", sans-serif;
   --color-sidebar: var(--sidebar);
@@ -104,6 +107,9 @@
   --cream: oklch(0.98 0.005 100);
   --info: oklch(0.71 0.14 228);
   --warning: oklch(0.8 0.15 75);
+  --receipt: oklch(0.96 0.002 150);
+  --receipt-ink: oklch(0.2 0.008 150);
+  --receipt-muted: oklch(0.48 0.008 150);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(0.2 0.01 150);
   --ring: oklch(0.9 0.22 122);
@@ -165,3 +171,23 @@
   &::placeholder { color: var(--muted-foreground); }
   &:focus { box-shadow: 0 0 0 1.5px var(--primary); }
 }
+
+/* Editorial studio screens: shared tokens, isolated from legacy layouts. */
+.studio-screen { max-width: 390px; min-height: 844px; letter-spacing: 0; }
+.studio-screen nav { max-width: 390px; }
+.studio-screen nav > div { background: var(--card); }
+.studio-screen nav a[aria-label="Leaderboard"] { box-shadow: none; }
+.studio-screen button { box-shadow: none; }
+.ticket-stub { position: relative; }
+.ticket-stub::before, .ticket-stub::after { content: ""; position: absolute; top: -10px; width: 20px; height: 20px; background: var(--surface); border-radius: 50%; }
+.ticket-stub::before { left: -10px; }
+.ticket-stub::after { right: -10px; }
+.receipt { color: var(--receipt-ink); background: var(--receipt); border-radius: 4px 4px 0 0; position: relative; }
+.receipt::after { content: ""; position: absolute; height: 12px; bottom: -11px; left: 0; right: 0; background: linear-gradient(135deg,var(--receipt) 25%,transparent 25%) -6px 0 / 12px 12px, linear-gradient(225deg,var(--receipt) 25%,transparent 25%) -6px 0 / 12px 12px; }
+.receipt-stamp { color: var(--receipt-ink); border-color: var(--receipt-ink); }
+.progress-photo { background: var(--secondary); }
+.comparison-slider { touch-action: pan-y; }
+.comparison-slider:focus-visible { opacity: 1; height: 6px; top: 50%; accent-color: var(--primary); }
+.studio-sheet { animation: studio-sheet-in .25s ease-out; }
+@keyframes studio-sheet-in { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }

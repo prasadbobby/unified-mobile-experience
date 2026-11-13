@@ -10,23 +10,34 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AnnouncementsRouteImport } from './routes/announcements'
+import { Route as AttendanceRouteImport } from './routes/attendance'
+import { Route as BmiRouteImport } from './routes/bmi'
 import { Route as ChallengeCalendarRouteImport } from './routes/challenge-calendar'
 import { Route as ChallengeCheckinRouteImport } from './routes/challenge-checkin'
 import { Route as ChallengeFeedRouteImport } from './routes/challenge-feed'
+import { Route as GuestHomeRouteImport } from './routes/guest-home'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as InviteRouteImport } from './routes/invite'
+import { Route as InvoiceDetailRouteImport } from './routes/invoice-detail'
+import { Route as InvoicesRouteImport } from './routes/invoices'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as LockedRouteImport } from './routes/locked'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as MealsRouteImport } from './routes/meals'
+import { Route as MedicalReportsRouteImport } from './routes/medical-reports'
 import { Route as MembershipRouteImport } from './routes/membership'
+import { Route as PackageDetailRouteImport } from './routes/package-detail'
 import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ProgressPhotosRouteImport } from './routes/progress-photos'
+import { Route as RenewRouteImport } from './routes/renew'
 import { Route as ScreensRouteImport } from './routes/screens'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as StepsRouteImport } from './routes/steps'
 import { Route as WorkoutRouteImport } from './routes/workout'
 import { Route as WorkoutLoggerRouteImport } from './routes/workout-logger'
+import { Route as WorkoutVideosRouteImport } from './routes/workout-videos'
 import { Route as ExerciseIdRouteImport } from './routes/exercise.$id'
 import { Route as FirstLoginAgeRouteImport } from './routes/first-login/age'
 import { Route as FirstLoginCodeRouteImport } from './routes/first-login/code'
@@ -41,6 +52,21 @@ import { Route as FirstLoginWelcomeRouteImport } from './routes/first-login/welc
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnnouncementsRoute = AnnouncementsRouteImport.update({
+  id: '/announcements',
+  path: '/announcements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AttendanceRoute = AttendanceRouteImport.update({
+  id: '/attendance',
+  path: '/attendance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BmiRoute = BmiRouteImport.update({
+  id: '/bmi',
+  path: '/bmi',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ChallengeCalendarRoute = ChallengeCalendarRouteImport.update({
@@ -58,6 +84,11 @@ const ChallengeFeedRoute = ChallengeFeedRouteImport.update({
   path: '/challenge-feed',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuestHomeRoute = GuestHomeRouteImport.update({
+  id: '/guest-home',
+  path: '/guest-home',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HomeRoute = HomeRouteImport.update({
   id: '/home',
   path: '/home',
@@ -66,6 +97,16 @@ const HomeRoute = HomeRouteImport.update({
 const InviteRoute = InviteRouteImport.update({
   id: '/invite',
   path: '/invite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvoiceDetailRoute = InvoiceDetailRouteImport.update({
+  id: '/invoice-detail',
+  path: '/invoice-detail',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvoicesRoute = InvoicesRouteImport.update({
+  id: '/invoices',
+  path: '/invoices',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeaderboardRoute = LeaderboardRouteImport.update({
@@ -88,14 +129,34 @@ const MealsRoute = MealsRouteImport.update({
   path: '/meals',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MedicalReportsRoute = MedicalReportsRouteImport.update({
+  id: '/medical-reports',
+  path: '/medical-reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MembershipRoute = MembershipRouteImport.update({
   id: '/membership',
   path: '/membership',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PackageDetailRoute = PackageDetailRouteImport.update({
+  id: '/package-detail',
+  path: '/package-detail',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgressPhotosRoute = ProgressPhotosRouteImport.update({
+  id: '/progress-photos',
+  path: '/progress-photos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RenewRoute = RenewRouteImport.update({
+  id: '/renew',
+  path: '/renew',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ScreensRoute = ScreensRouteImport.update({
@@ -126,6 +187,11 @@ const WorkoutRoute = WorkoutRouteImport.update({
 const WorkoutLoggerRoute = WorkoutLoggerRouteImport.update({
   id: '/workout-logger',
   path: '/workout-logger',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkoutVideosRoute = WorkoutVideosRouteImport.update({
+  id: '/workout-videos',
+  path: '/workout-videos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExerciseIdRoute = ExerciseIdRouteImport.update({
@@ -181,23 +247,34 @@ const FirstLoginWelcomeRoute = FirstLoginWelcomeRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/announcements': typeof AnnouncementsRoute
+  '/attendance': typeof AttendanceRoute
+  '/bmi': typeof BmiRoute
   '/challenge-calendar': typeof ChallengeCalendarRoute
   '/challenge-checkin': typeof ChallengeCheckinRoute
   '/challenge-feed': typeof ChallengeFeedRoute
+  '/guest-home': typeof GuestHomeRoute
   '/home': typeof HomeRoute
   '/invite': typeof InviteRoute
+  '/invoice-detail': typeof InvoiceDetailRoute
+  '/invoices': typeof InvoicesRoute
   '/leaderboard': typeof LeaderboardRoute
   '/locked': typeof LockedRoute
   '/login': typeof LoginRoute
   '/meals': typeof MealsRoute
+  '/medical-reports': typeof MedicalReportsRoute
   '/membership': typeof MembershipRoute
+  '/package-detail': typeof PackageDetailRoute
   '/profile': typeof ProfileRoute
+  '/progress-photos': typeof ProgressPhotosRoute
+  '/renew': typeof RenewRoute
   '/screens': typeof ScreensRoute
   '/search': typeof SearchRoute
   '/signup': typeof SignupRoute
   '/steps': typeof StepsRoute
   '/workout': typeof WorkoutRoute
   '/workout-logger': typeof WorkoutLoggerRoute
+  '/workout-videos': typeof WorkoutVideosRoute
   '/exercise/$id': typeof ExerciseIdRoute
   '/first-login/age': typeof FirstLoginAgeRoute
   '/first-login/code': typeof FirstLoginCodeRoute
@@ -211,23 +288,34 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/announcements': typeof AnnouncementsRoute
+  '/attendance': typeof AttendanceRoute
+  '/bmi': typeof BmiRoute
   '/challenge-calendar': typeof ChallengeCalendarRoute
   '/challenge-checkin': typeof ChallengeCheckinRoute
   '/challenge-feed': typeof ChallengeFeedRoute
+  '/guest-home': typeof GuestHomeRoute
   '/home': typeof HomeRoute
   '/invite': typeof InviteRoute
+  '/invoice-detail': typeof InvoiceDetailRoute
+  '/invoices': typeof InvoicesRoute
   '/leaderboard': typeof LeaderboardRoute
   '/locked': typeof LockedRoute
   '/login': typeof LoginRoute
   '/meals': typeof MealsRoute
+  '/medical-reports': typeof MedicalReportsRoute
   '/membership': typeof MembershipRoute
+  '/package-detail': typeof PackageDetailRoute
   '/profile': typeof ProfileRoute
+  '/progress-photos': typeof ProgressPhotosRoute
+  '/renew': typeof RenewRoute
   '/screens': typeof ScreensRoute
   '/search': typeof SearchRoute
   '/signup': typeof SignupRoute
   '/steps': typeof StepsRoute
   '/workout': typeof WorkoutRoute
   '/workout-logger': typeof WorkoutLoggerRoute
+  '/workout-videos': typeof WorkoutVideosRoute
   '/exercise/$id': typeof ExerciseIdRoute
   '/first-login/age': typeof FirstLoginAgeRoute
   '/first-login/code': typeof FirstLoginCodeRoute
@@ -242,23 +330,34 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/announcements': typeof AnnouncementsRoute
+  '/attendance': typeof AttendanceRoute
+  '/bmi': typeof BmiRoute
   '/challenge-calendar': typeof ChallengeCalendarRoute
   '/challenge-checkin': typeof ChallengeCheckinRoute
   '/challenge-feed': typeof ChallengeFeedRoute
+  '/guest-home': typeof GuestHomeRoute
   '/home': typeof HomeRoute
   '/invite': typeof InviteRoute
+  '/invoice-detail': typeof InvoiceDetailRoute
+  '/invoices': typeof InvoicesRoute
   '/leaderboard': typeof LeaderboardRoute
   '/locked': typeof LockedRoute
   '/login': typeof LoginRoute
   '/meals': typeof MealsRoute
+  '/medical-reports': typeof MedicalReportsRoute
   '/membership': typeof MembershipRoute
+  '/package-detail': typeof PackageDetailRoute
   '/profile': typeof ProfileRoute
+  '/progress-photos': typeof ProgressPhotosRoute
+  '/renew': typeof RenewRoute
   '/screens': typeof ScreensRoute
   '/search': typeof SearchRoute
   '/signup': typeof SignupRoute
   '/steps': typeof StepsRoute
   '/workout': typeof WorkoutRoute
   '/workout-logger': typeof WorkoutLoggerRoute
+  '/workout-videos': typeof WorkoutVideosRoute
   '/exercise/$id': typeof ExerciseIdRoute
   '/first-login/age': typeof FirstLoginAgeRoute
   '/first-login/code': typeof FirstLoginCodeRoute
@@ -274,23 +373,34 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/announcements'
+    | '/attendance'
+    | '/bmi'
     | '/challenge-calendar'
     | '/challenge-checkin'
     | '/challenge-feed'
+    | '/guest-home'
     | '/home'
     | '/invite'
+    | '/invoice-detail'
+    | '/invoices'
     | '/leaderboard'
     | '/locked'
     | '/login'
     | '/meals'
+    | '/medical-reports'
     | '/membership'
+    | '/package-detail'
     | '/profile'
+    | '/progress-photos'
+    | '/renew'
     | '/screens'
     | '/search'
     | '/signup'
     | '/steps'
     | '/workout'
     | '/workout-logger'
+    | '/workout-videos'
     | '/exercise/$id'
     | '/first-login/age'
     | '/first-login/code'
@@ -304,23 +414,34 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/announcements'
+    | '/attendance'
+    | '/bmi'
     | '/challenge-calendar'
     | '/challenge-checkin'
     | '/challenge-feed'
+    | '/guest-home'
     | '/home'
     | '/invite'
+    | '/invoice-detail'
+    | '/invoices'
     | '/leaderboard'
     | '/locked'
     | '/login'
     | '/meals'
+    | '/medical-reports'
     | '/membership'
+    | '/package-detail'
     | '/profile'
+    | '/progress-photos'
+    | '/renew'
     | '/screens'
     | '/search'
     | '/signup'
     | '/steps'
     | '/workout'
     | '/workout-logger'
+    | '/workout-videos'
     | '/exercise/$id'
     | '/first-login/age'
     | '/first-login/code'
@@ -334,23 +455,34 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/announcements'
+    | '/attendance'
+    | '/bmi'
     | '/challenge-calendar'
     | '/challenge-checkin'
     | '/challenge-feed'
+    | '/guest-home'
     | '/home'
     | '/invite'
+    | '/invoice-detail'
+    | '/invoices'
     | '/leaderboard'
     | '/locked'
     | '/login'
     | '/meals'
+    | '/medical-reports'
     | '/membership'
+    | '/package-detail'
     | '/profile'
+    | '/progress-photos'
+    | '/renew'
     | '/screens'
     | '/search'
     | '/signup'
     | '/steps'
     | '/workout'
     | '/workout-logger'
+    | '/workout-videos'
     | '/exercise/$id'
     | '/first-login/age'
     | '/first-login/code'
@@ -365,23 +497,34 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnnouncementsRoute: typeof AnnouncementsRoute
+  AttendanceRoute: typeof AttendanceRoute
+  BmiRoute: typeof BmiRoute
   ChallengeCalendarRoute: typeof ChallengeCalendarRoute
   ChallengeCheckinRoute: typeof ChallengeCheckinRoute
   ChallengeFeedRoute: typeof ChallengeFeedRoute
+  GuestHomeRoute: typeof GuestHomeRoute
   HomeRoute: typeof HomeRoute
   InviteRoute: typeof InviteRoute
+  InvoiceDetailRoute: typeof InvoiceDetailRoute
+  InvoicesRoute: typeof InvoicesRoute
   LeaderboardRoute: typeof LeaderboardRoute
   LockedRoute: typeof LockedRoute
   LoginRoute: typeof LoginRoute
   MealsRoute: typeof MealsRoute
+  MedicalReportsRoute: typeof MedicalReportsRoute
   MembershipRoute: typeof MembershipRoute
+  PackageDetailRoute: typeof PackageDetailRoute
   ProfileRoute: typeof ProfileRoute
+  ProgressPhotosRoute: typeof ProgressPhotosRoute
+  RenewRoute: typeof RenewRoute
   ScreensRoute: typeof ScreensRoute
   SearchRoute: typeof SearchRoute
   SignupRoute: typeof SignupRoute
   StepsRoute: typeof StepsRoute
   WorkoutRoute: typeof WorkoutRoute
   WorkoutLoggerRoute: typeof WorkoutLoggerRoute
+  WorkoutVideosRoute: typeof WorkoutVideosRoute
   ExerciseIdRoute: typeof ExerciseIdRoute
   FirstLoginAgeRoute: typeof FirstLoginAgeRoute
   FirstLoginCodeRoute: typeof FirstLoginCodeRoute
@@ -401,6 +544,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/announcements': {
+      id: '/announcements'
+      path: '/announcements'
+      fullPath: '/announcements'
+      preLoaderRoute: typeof AnnouncementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/attendance': {
+      id: '/attendance'
+      path: '/attendance'
+      fullPath: '/attendance'
+      preLoaderRoute: typeof AttendanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bmi': {
+      id: '/bmi'
+      path: '/bmi'
+      fullPath: '/bmi'
+      preLoaderRoute: typeof BmiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/challenge-calendar': {
@@ -424,6 +588,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChallengeFeedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guest-home': {
+      id: '/guest-home'
+      path: '/guest-home'
+      fullPath: '/guest-home'
+      preLoaderRoute: typeof GuestHomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/home': {
       id: '/home'
       path: '/home'
@@ -436,6 +607,20 @@ declare module '@tanstack/react-router' {
       path: '/invite'
       fullPath: '/invite'
       preLoaderRoute: typeof InviteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/invoice-detail': {
+      id: '/invoice-detail'
+      path: '/invoice-detail'
+      fullPath: '/invoice-detail'
+      preLoaderRoute: typeof InvoiceDetailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/invoices': {
+      id: '/invoices'
+      path: '/invoices'
+      fullPath: '/invoices'
+      preLoaderRoute: typeof InvoicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leaderboard': {
@@ -466,6 +651,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MealsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/medical-reports': {
+      id: '/medical-reports'
+      path: '/medical-reports'
+      fullPath: '/medical-reports'
+      preLoaderRoute: typeof MedicalReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/membership': {
       id: '/membership'
       path: '/membership'
@@ -473,11 +665,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MembershipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/package-detail': {
+      id: '/package-detail'
+      path: '/package-detail'
+      fullPath: '/package-detail'
+      preLoaderRoute: typeof PackageDetailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progress-photos': {
+      id: '/progress-photos'
+      path: '/progress-photos'
+      fullPath: '/progress-photos'
+      preLoaderRoute: typeof ProgressPhotosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/renew': {
+      id: '/renew'
+      path: '/renew'
+      fullPath: '/renew'
+      preLoaderRoute: typeof RenewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/screens': {
@@ -520,6 +733,13 @@ declare module '@tanstack/react-router' {
       path: '/workout-logger'
       fullPath: '/workout-logger'
       preLoaderRoute: typeof WorkoutLoggerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/workout-videos': {
+      id: '/workout-videos'
+      path: '/workout-videos'
+      fullPath: '/workout-videos'
+      preLoaderRoute: typeof WorkoutVideosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/exercise/$id': {
@@ -597,23 +817,34 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnnouncementsRoute: AnnouncementsRoute,
+  AttendanceRoute: AttendanceRoute,
+  BmiRoute: BmiRoute,
   ChallengeCalendarRoute: ChallengeCalendarRoute,
   ChallengeCheckinRoute: ChallengeCheckinRoute,
   ChallengeFeedRoute: ChallengeFeedRoute,
+  GuestHomeRoute: GuestHomeRoute,
   HomeRoute: HomeRoute,
   InviteRoute: InviteRoute,
+  InvoiceDetailRoute: InvoiceDetailRoute,
+  InvoicesRoute: InvoicesRoute,
   LeaderboardRoute: LeaderboardRoute,
   LockedRoute: LockedRoute,
   LoginRoute: LoginRoute,
   MealsRoute: MealsRoute,
+  MedicalReportsRoute: MedicalReportsRoute,
   MembershipRoute: MembershipRoute,
+  PackageDetailRoute: PackageDetailRoute,
   ProfileRoute: ProfileRoute,
+  ProgressPhotosRoute: ProgressPhotosRoute,
+  RenewRoute: RenewRoute,
   ScreensRoute: ScreensRoute,
   SearchRoute: SearchRoute,
   SignupRoute: SignupRoute,
   StepsRoute: StepsRoute,
   WorkoutRoute: WorkoutRoute,
   WorkoutLoggerRoute: WorkoutLoggerRoute,
+  WorkoutVideosRoute: WorkoutVideosRoute,
   ExerciseIdRoute: ExerciseIdRoute,
   FirstLoginAgeRoute: FirstLoginAgeRoute,
   FirstLoginCodeRoute: FirstLoginCodeRoute,

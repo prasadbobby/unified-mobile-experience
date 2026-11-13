@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/signup")({
   head: () => ({ meta: [
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     { title: "Create an account — PulseFit" },
     { name: "description", content: "Create a PulseFit account to set goals, track progress and stay motivated." },
     { property: "og:title", content: "Create an account — PulseFit" },

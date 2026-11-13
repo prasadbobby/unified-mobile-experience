@@ -35,3 +35,6 @@ use the editor.
 - Custom rounded icons live in src/components/app/icons.tsx; generic UI icons come from lucide-react.
 - C7 member screens share building blocks in src/components/c7/ (kit.tsx, moods.tsx) and sample data in src/lib/c7-data.ts; keep them presentational so layouts port to React Native.
 - First-login onboarding lives under src/routes/first-login/* with shared pieces in src/components/onboard/ and answers in src/lib/onboarding.ts (in-memory); standalone SVG artwork in src/assets/*.svg uses inline fills only so it can be copied.
+- Editorial studio pages reuse studio-kit.tsx and studio-data.ts with scoped global styles; this preserves legacy screens while keeping phone layouts reusable.
+- Studio uploads, read markers and video download state are session-only frontend review interactions; this avoids implying that sample records are saved to a real member account.
+- Receipt PDFs are created on demand in the browser with a dynamically loaded PDF library; this keeps document generation outside the server runtime.

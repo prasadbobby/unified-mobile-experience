@@ -12,6 +12,7 @@ export const Route = createFileRoute("/exercise/$id")({
     return w;
   },
   head: ({ loaderData }) => ({ meta: [
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     { title: loaderData ? `${loaderData.title} — PulseFit` : "Workout — PulseFit" },
     { name: "description", content: loaderData?.description.slice(0, 150) ?? "Guided workout" },
     { property: "og:title", content: loaderData ? `${loaderData.title} — PulseFit` : "Workout — PulseFit" },

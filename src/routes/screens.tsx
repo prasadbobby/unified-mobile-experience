@@ -4,18 +4,43 @@ import { Screen, TopBar } from "@/components/app/ui";
 import { FRAME } from "@/components/c7/kit";
 
 export const Route = createFileRoute("/screens")({
-  head: () => ({ meta: [
-    { title: "New screens — C7 Personal Fitness" },
-    { name: "description", content: "Index of the C7 member app screens: membership, challenge, logger, steps and access." },
-    { property: "og:title", content: "New screens — C7 Personal Fitness" },
-    { property: "og:description", content: "Membership, 90-day challenge, workout logger, steps and invite screens." },
-    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
-  ] }),
+  head: () => ({
+    meta: [
+      { title: "New screens — C7 Personal Fitness" },
+      {
+        name: "description",
+        content:
+          "Index of the C7 member app screens: membership, challenge, logger, steps and access.",
+      },
+      { property: "og:title", content: "New screens — C7 Personal Fitness" },
+      {
+        property: "og:description",
+        content: "Membership, 90-day challenge, workout logger, steps and invite screens.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
   component: ScreensIndex,
 });
 
 const items = [
-  { to: "/first-login/welcome", title: "First-time sign-in", sub: "Invited member onboarding (9 steps)" },
+  { to: "/guest-home", title: "Guest home", sub: "Package tickets & studio notes" },
+  { to: "/package-detail", title: "Package detail", sub: "Studio, pricing & request sheet" },
+  { to: "/renew", title: "Renew your package", sub: "90 days complete · your next chapter" },
+  { to: "/invoices", title: "Invoices", sub: "Outstanding balance & monthly ledger" },
+  { to: "/invoice-detail", title: "Invoice detail", sub: "Paper receipt & share PDF" },
+  { to: "/attendance", title: "Attendance", sub: "Contribution calendar & streak" },
+  { to: "/bmi", title: "Body mass index", sub: "Gauge, calculator & history" },
+  { to: "/medical-reports", title: "Medical reports", sub: "Document shelf & upload" },
+  { to: "/progress-photos", title: "Progress photos", sub: "Before / after comparison" },
+  { to: "/workout-videos", title: "Workout videos", sub: "Animated demos & downloads" },
+  { to: "/announcements", title: "Announcements", sub: "Pinned notes, events & offers" },
+  {
+    to: "/first-login/welcome",
+    title: "First-time sign-in",
+    sub: "Invited member onboarding (9 steps)",
+  },
   { to: "/membership", title: "Membership", sub: "Plan, payments, history" },
   { to: "/challenge-checkin", title: "Today's check-in", sub: "90-day challenge form" },
   { to: "/challenge-feed", title: "Challenge feed", sub: "Community check-ins" },
@@ -33,9 +58,19 @@ function ScreensIndex() {
       <p className="px-5 pt-6 text-sm text-muted-foreground">C7 Personal Fitness member app</p>
       <div className="mt-4 space-y-3 px-5">
         {items.map((i, k) => (
-          <Link key={i.to} to={i.to} style={{ animationDelay: `${k * 50}ms` }} className="flex items-center gap-4 rounded-[1.5rem] bg-card p-4 animate-fade-up transition hover:bg-secondary">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-deep text-sm font-medium text-primary">{k + 1}</span>
-            <span className="flex-1"><span className="block font-medium">{i.title}</span><span className="text-xs text-muted-foreground">{i.sub}</span></span>
+          <Link
+            key={i.to}
+            to={i.to}
+            style={{ animationDelay: `${k * 50}ms` }}
+            className="flex items-center gap-4 rounded-[1.5rem] bg-card p-4 animate-fade-up transition hover:bg-secondary"
+          >
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-deep text-sm font-medium text-primary">
+              {k + 1}
+            </span>
+            <span className="flex-1">
+              <span className="block font-medium">{i.title}</span>
+              <span className="text-xs text-muted-foreground">{i.sub}</span>
+            </span>
             <ChevronRight className="h-5 w-5 text-muted-foreground" />
           </Link>
         ))}

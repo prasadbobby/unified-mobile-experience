@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/leaderboard")({
   head: () => ({ meta: [
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     { title: "Leaderboard — PulseFit" },
     { name: "description", content: "See who leads the workout and cooking streaks this week." },
     { property: "og:title", content: "Leaderboard — PulseFit" },

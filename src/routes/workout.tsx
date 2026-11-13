@@ -8,6 +8,7 @@ import { cats } from "./home";
 
 export const Route = createFileRoute("/workout")({
   head: () => ({ meta: [
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     { title: "Workouts — PulseFit" },
     { name: "description", content: "Browse guided warm-up, cardio and strength workouts." },
     { property: "og:title", content: "Workouts — PulseFit" },
